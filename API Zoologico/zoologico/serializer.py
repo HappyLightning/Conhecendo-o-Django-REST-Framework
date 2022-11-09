@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from zoologico.models import Animal, Zoologico
+from zoologico.models import Animal, Zoologico, Cativar
 
 
 class AnimalSerializer(serializers.ModelSerializer):
@@ -11,3 +11,8 @@ class AnimalSerializer(serializers.ModelSerializer):
 class ZoologicoSerializer(serializers.ModelSerializer):
 	model = Zoologico
 	fields = '__all__'  # Mesma coisa que criar uma lista como acima.
+
+class CativarSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Cativar
+		exclude = []
